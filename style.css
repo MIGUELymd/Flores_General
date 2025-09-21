@@ -1,0 +1,86 @@
+body {
+    background-color: #f7f2e7; /* Un color crema suave que evoca calidez */
+    color: #4a4a4a;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden; /* Oculta cualquier elemento que se desborde del cuerpo */
+    text-align: center;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.7);
+    padding: 30px 50px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 10; /* Asegura que el contenido esté sobre las flores */
+}
+
+h1 {
+    color: #ffd700; /* Un amarillo vibrante */
+    font-size: 2.5em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 2s ease-in-out;
+}
+
+p {
+    font-size: 1.2em;
+}
+
+#messageButton {
+    background-color: #ffd700;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1em;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#messageButton:hover {
+    background-color: #ffc400;
+    transform: translateY(-3px);
+}
+
+#messageContainer {
+    margin-top: 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #ffd700;
+    min-height: 50px; /* Para que el espacio no cambie al cargar el mensaje */
+    animation: messageIn 0.5s ease-in-out;
+}
+
+/* Estilo para las flores */
+.flower {
+    position: absolute;
+    font-size: 1.5em;
+    color: #ffd700;
+    animation: floatAndFade 15s infinite ease-in-out;
+    pointer-events: none; /* Las flores no interfieren con el clic */
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes messageIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes floatAndFade {
+    0% { transform: translateY(0) rotate(0deg) scale(0.8); opacity: 0.8; }
+    50% { transform: translateY(-100px) rotate(180deg) scale(1.1); opacity: 0.5; }
+    100% { transform: translateY(-200px) rotate(360deg) scale(0.7); opacity: 0; }
+}
